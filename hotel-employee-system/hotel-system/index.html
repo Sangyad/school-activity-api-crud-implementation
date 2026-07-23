@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aurelia Hotel — Reservations</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="masthead">
+    <p class="eyebrow">pc1 &middot; webserver 1 &middot; hotel_db</p>
+    <h1>Aurelia Hotel <span>Reservations Desk</span></h1>
+  </header>
+
+  <main class="layout">
+
+    <!-- LEFT: Create Reservation -->
+    <section class="panel form-panel">
+      <h2>New reservation</h2>
+      <p class="hint">Employee name and ID are pulled live from the Employee System (pc2).</p>
+
+      <form id="reservationForm">
+        <label for="customerName">Customer name</label>
+        <input type="text" id="customerName" name="customer_name" placeholder="e.g. Isabel Cruz" required>
+
+        <div class="row">
+          <div class="field">
+            <label for="checkIn">Check in</label>
+            <input type="date" id="checkIn" name="check_in" required>
+          </div>
+          <div class="field">
+            <label for="checkOut">Check out</label>
+            <input type="date" id="checkOut" name="check_out" required>
+          </div>
+        </div>
+
+        <label for="employeeName">Employee name</label>
+        <select id="employeeName" name="employee_name" required>
+          <option value="" disabled selected>Loading employees…</option>
+        </select>
+
+        <label for="employeeId">Employee ID</label>
+        <input type="text" id="employeeId" name="employee_id" readonly placeholder="Auto-filled from selection">
+
+        <button type="submit" id="submitBtn">Create reservation</button>
+        <p id="formStatus" class="status" role="status"></p>
+      </form>
+    </section>
+
+    <!-- RIGHT: Store contents -->
+    <section class="panel store-panel">
+      <h2>Stored in hotel_db</h2>
+      <p class="hint">Confirms the record actually reached the database.</p>
+
+      <div class="table-wrap">
+        <table id="reservationsTable">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Customer</th>
+              <th>Check in</th>
+              <th>Check out</th>
+              <th>Employee</th>
+              <th>Emp. ID</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td colspan="6" class="empty">No reservations yet.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
