@@ -1,0 +1,1 @@
+This repository contains a school project demonstrating a CRUD API using a microservice architecture. It is intended for learning and experimentation. Feel free to use, modify, improve, or build upon the project. Contributions and feedback are welcome.
